@@ -70,8 +70,8 @@ const myQuestions = [
       question: 'You are responsible for a large AWS environment, and specifically, several subnets within  a custom VPC. The VPC contains both public and private subnets. There are approxi- mately 300 EC2 instances within one of the private subnets that uses a NAT device  to reach the Internet. Each evening at 11 p.m., the instances push the day’s date to an  external data store outside of AWS, available via an API that is Internet accessible. How- ever, you are seeing that not all of the data is getting out each evening, and several of the  instances show failed transmissions to the external API. Assuming the API itself is not an  issue, what should you consider when attempting to fix this issue? (Choose two.)',
       choices: {
         A: 'The instances are saturating the VPC’s internet gateway. Consider attaching an addi- tional internet gateway to the VPC.',
-        B: 'C. B.',
-        C: '.   The NAT device could be a NAT instance that is on an instance size too small to  handle the traffic. Reprovision the NAT instance on a larger instance size with more  CPU. C.   Set up an SQS queue with all the desired transmissions as entries in the queue. Have  the EC2 instances poll the queue and transmit data until the queue is completely  empty. Add a Lambda job to detect failed transmissions and re-add the failed opera- tion to the SQS queue.',
+        B: 'The NAT device could be a NAT instance that is on an instance size too small to handle the traffic. Reprovision the NAT instance on a larger instance size with more CPU.',
+        C: 'Set up an SQS queue with all the desired transmissions as entries in the queue. Have the EC2 instances poll the queue and transmit data until the queue is completely empty. Add a Lambda job to detect failed transmissions and re-add the failed opera- tion to the SQS queue.',
         D: 'The instances cannot support the required throughput. Re-provision the instances to  use EBS volumes with provisioned IOPS as the volume type.168   Chapter 6   ■   Practice Test'
       },
       answer: [ 'B', 'C' ]
